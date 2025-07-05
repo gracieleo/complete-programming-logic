@@ -1,0 +1,290 @@
+/* 
+Estrutura Sequencial
+Crie um programa que: Peça para o usuário digitar dois números.
+Mostre o resultado da soma, subtracao, multiplicação e divisão na tela. 
+*/
+
+
+Python:
+n1 = int(input("digite o 1º numero: "))
+n2 = int(input("digite o 2º numero: "))
+
+soma = n1 + n2
+subtracao = n1 - n2
+multiplicacao = n1 * n2
+divisao = n1 / n2   
+
+print("A soma é igual a {}".format(soma))
+print("A subtração é igual a {}".format(subtracao))
+print("A multiplicação é igual a {}".format(multiplicacao)) 
+print("A divisão é igual a {:.2f}".format(divisao))
+
+>>>
+
+Java:
+public class Numero {
+
+	public static void main(String[] args) {		
+		Scanner sc = new Scanner(System.in);
+		int n1, n2, soma, subtracao, multiplicacao;
+		double divisao;
+		
+		System.out.println("Digite o 1º numero: ");
+		n1 = sc.nextInt();		
+		System.out.println("Digite o 2º numero: ");
+		n2 = sc.nextInt();	
+		
+		soma = n1 + n2;
+		subtracao = n1 - n2;
+		divisao = (double) n1 / n2;
+		multiplicacao = n1 * n2;
+		
+		System.out.println("Soma: " + soma);		
+		System.out.println("Subtração: " + subtracao);		
+		System.out.println("Divisão: " + divisao);		
+		System.out.println("Multiplicação: %.2f\n" + multiplicacao);
+	}
+}
+
+
+/* 
+Estrutura Seleção Simples
+Crie um programa que peça ao usuário para digitar um número. Se o número for maior que 100, mostre a mensagem: "Número alto!"
+Caso contrário, não mostre nada.
+*/
+
+Python:
+numero = int(input("Digite um número: "))
+
+if numero > 100:
+    print("Número alto!")
+	
+>>>
+	
+Java:
+public class Numero {
+
+	public static void main(String[] args) {		
+		Scanner sc = new Scanner(System.in);
+		int numero;
+				
+		System.out.println("Digite um numero: ");
+		numero = sc.nextInt();		
+			
+		if(numero > 100) {
+			System.out.println("Número alto!");	
+		}		
+		sc.close();
+	}
+}
+
+
+/* 
+Estrutura Seleção Composta
+Crie um programa que leia a idade de uma pessoa e informe:
+"Maior de idade", se a idade for 18 ou mais
+"Menor de idade", caso contrário
+*/
+
+Python:
+idade = int(input("Digite sua idade: "))
+if idade >= 18:
+    print("Maior de idade")
+else:
+    print("Menor de idade")
+
+>>>
+
+Java:
+public class Idade {
+
+	public static void main(String[] args) {		
+		Scanner sc = new Scanner(System.in);
+		int idade;
+				
+		System.out.println("Digite sua idade: ");
+		idade = sc.nextInt();		
+			
+		if(idade >= 18) {
+			System.out.println("Maior de idade");	
+		} 
+		else {
+			System.out.println("Menor de idade");
+		}
+		sc.close();		
+	}
+}
+
+
+
+/* 
+Estrutura Seleção Encadeada (homogenea)
+Crie um programa que leia a nota final de um aluno (de 0 a 10) e mostre a classificação:
+nota >= 9 → Excelente
+nota >= 7 → Bom
+nota >= 5 → Regular
+nota < 5 → Reprovado
+*/
+
+Python:
+nota = int(input("Digite sua nota final: "))
+
+if nota >= 9:
+    print("Excelente")
+elif nota >= 7:
+    print("Bom")
+elif nota >= 5:
+    print("Regular")
+else:
+    print("Reprovado")
+
+>>>
+	
+Java:
+public class NotaFinal {
+
+	public static void main(String[] args) {		
+		Scanner sc = new Scanner(System.in);
+		int nota;
+				
+		System.out.println("Digite sua nota final: ");
+		nota = sc.nextInt();		
+			
+		if(nota >= 9) {
+			System.out.println("Excelente");	
+		} 
+		else if(nota >= 7) {
+			System.out.println("Bom");
+		}
+		else if(nota >= 5) {
+			System.out.println("Regular");
+		}
+		else {
+			System.out.println("Reprovado");
+		}
+		sc.close();		
+	}
+}
+
+
+/*
+Repetição com while (enquanto)
+Crie um programa que peça para o usuário digitar números positivos.
+O programa deve somar todos os valores digitados.
+A repetição termina quando o usuário digitar zero.
+Ao final, o programa exibe a soma total.
+*/
+
+Python:
+numero = int(input("Digite um número positivo maior que zero (ou 0 para sair): "))
+acum = 0
+
+while numero != 0:
+    if numero <= 0:
+        print("Número inválido.")
+    else:
+        acum += numero
+    numero = int(input("Digite um número positivo maior que zero (ou 0 para sair): "))
+print(f"A soma dos números digitados é: {acum}")
+
+>>>
+
+Java:
+public class NumeroPositivo {
+
+	public static void main(String[] args) {		
+		Scanner sc = new Scanner(System.in);
+		int numero;
+		int acum = 0;
+				
+		System.out.println("Digite um número positivo maior que zero (ou 0 para sair): ");
+		numero = sc.nextInt();		
+		
+		while (numero != 0) { 
+			if (numero < 0) {
+				System.out.println("Número inválido.");
+			}
+			else {
+				acum += numero;				    
+			}
+			
+			System.out.println("Digite um número positivo maior que zero (ou 0 para sair): ");
+			numero = sc.nextInt();						
+	}
+		sc.close();
+		System.out.println("A soma dos números digitados é: " + acum);
+  }
+}
+
+
+
+/*
+Repetição com do...while
+(simulado com while True + break no Python)
+Peça ao usuário para digitar um número maior que zero.
+Se o número for inválido (zero ou negativo), repita a pergunta.
+Mostre "Número válido!" quando ele digitar corretamente.
+*/
+
+Python:
+while True:
+	numero = int(input("Digite um número maior que zero: "))
+    if numero > 0:
+        print("Número válido")   
+        break 
+    else:
+       print("Número inválido")      
+       
+>>>
+
+Java:
+public class Numero {
+
+	public static void main(String[] args) {		
+		Scanner sc = new Scanner(System.in);
+		int numero;
+						
+		do {
+			System.out.println("Digite um número maior que zero: ");
+			numero = sc.nextInt();
+			if (numero <= 0) {
+				System.out.println("Número inválido.");				
+			}
+		}
+		while (numero <= 0);	
+
+		System.out.println("Número válido.");
+		sc.close();
+	}		
+}
+
+/*
+Repetição com variavel de controle - for
+Crie um programa que peça para o usuário digitar um número inteiro positivo N.
+Depois, o programa deve exibir a tabuada de multiplicação de 1 até 10 para esse número.
+*/
+
+Python:
+numero = int(input("Digite um número inteiro maior que zero: "))
+
+for i in range(1, 11):
+    print(f"{numero} x {i} = {numero * i}")
+
+>>>
+
+Java:
+public class NumeroPositivo {
+
+	public static void main(String[] args) {		
+		Scanner sc = new Scanner(System.in);
+		int numero;
+		
+		System.out.println("Digite um número inteiro maior que zero: ");
+		numero = sc.nextInt();
+		
+		for (int i = 1; i < 11; i++) {
+			System.out.println(numero + "x" + i + " = " + (numero * i));			
+		}		
+		sc.close();
+	}		
+}
